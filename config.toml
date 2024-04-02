@@ -1,0 +1,12 @@
+# config.toml
+#
+# Configuration for this build
+#
+# (c) Andrew Shapton 2023
+#
+
+title = "This build's configuration"
+
+[Config]
+build       = "src/build.toml"  # Generic Settings
+this        = "src/tb.toml"    # Build specific settings

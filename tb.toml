@@ -1,0 +1,40 @@
+# bf.toml
+#
+# Configuration for Pittman's TinyBasic build
+#
+# (c) Andrew Shapton 2024
+#
+
+
+title = "Pittman's TinyBasic build Configuration TOML file"
+
+[BuildParameters]
+sourceFile      = "tinybasic.asm"       # Source assembler file                             (Required)
+assembledFile   = "tb.exe"              # Output assembled executable file                  (Required)
+prefix          = "TB"                  # Prefix for the blocks                             (Required)
+base            = "0200"                # Base adress for origination/load of executable    (Required)
+title           = "TinyBasic(Pittman)"  # Title of program for Virtual Sphere               (Required)
+vcass           = "tb"                  # Filename for binary Virtual Sphere cassette V1      
+vcass2          = "tb"                  # Filename for binary Virtual Sphere cassette V2      
+js              = "tb"                  # Filename for Javascript Virtual Sphere cassette   
+cassette        = "tb"                  # Filename for .wav file for cassette audio         
+
+# (Un)comment flags as required
+flags           = [
+                    "noheader",     # Don't generate a Javascript header for the Virtual Sphere
+                    "movebin",      # Move the binary to the assets location post-build
+                    # "silent"        # Don't produce any output (except errors)
+]
+[Locations]
+convertEXEDir   = "/Users/andrew.shapton/MyProjects/sphere/HOMEBREW/TOOLS/CONVERT/"     # Location of convertEXE file
+srcDir          = "/Users/andrew.shapton/MyProjects/sphere/HOMEBREW/LANG-TB/src/"       # Location of assembler source code
+outputDir       = "/Users/andrew.shapton/MyProjects/sphere/HOMEBREW/LANG-TB/ASSETS/"    # Location of target assets
+
+[Miscellaneous]
+buildASM        = "build.asm"       # Name of build file (with version etc inside)
+buildJustify    = "L"               # Justify property for build version -  C - Centre Justified [Default]
+                                    #                                       L - Left Justified
+                                    #                                       R - Right Justified
+NLAfterBuildVersion = true          # true to place a new line after the build version [Default]
+                                    # false for no new line
+                                    # NOTE - MUST BE LOWER CASE
